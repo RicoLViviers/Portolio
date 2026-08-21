@@ -1,0 +1,978 @@
+/* =========================================================
+   ENGINEERING PORTFOLIO
+   Technical / Editorial / Industrial
+========================================================= */
+
+:root {
+    --paper: #f3f0e8;
+    --paper-dark: #e8e3d7;
+    --ink: #20201d;
+    --muted: #6f6b62;
+    --line: #b9b3a6;
+    --accent: #8f3028;
+    --accent-dark: #67221d;
+    --white: #faf9f5;
+
+    --serif: "Libre Baskerville", Georgia, serif;
+    --sans: "Source Sans 3", Arial, sans-serif;
+    --mono: "IBM Plex Mono", monospace;
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+/* =========================================================
+   TECHNICAL BACKGROUND
+========================================================= */
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+
+    background-image:
+        linear-gradient(
+            rgba(80, 75, 65, 0.035) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(80, 75, 65, 0.035) 1px,
+            transparent 1px
+        );
+
+    background-size: 32px 32px;
+
+    z-index: -1;
+}
+
+
+/* =========================================================
+   TOP BAR
+========================================================= */
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+
+    padding: 9px 5vw;
+
+    border-bottom: 1px solid var(--line);
+
+    background: var(--paper-dark);
+
+    color: var(--muted);
+
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.site-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 28px 5vw;
+
+    border-bottom: 1px solid var(--line);
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.brand-mark {
+    width: 48px;
+    height: 48px;
+
+    display: grid;
+    place-items: center;
+
+    border: 2px solid var(--ink);
+
+    font-family: var(--mono);
+    font-size: 0.9rem;
+    font-weight: 500;
+
+    position: relative;
+}
+
+.brand-mark::after {
+    content: "";
+    position: absolute;
+
+    width: 8px;
+    height: 8px;
+
+    right: -5px;
+    bottom: -5px;
+
+    background: var(--paper);
+
+    border: 1px solid var(--ink);
+}
+
+.brand h1 {
+    font-family: var(--serif);
+    font-size: 1.35rem;
+    line-height: 1.2;
+}
+
+.brand p {
+    color: var(--muted);
+
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.05em;
+}
+
+nav {
+    display: flex;
+    gap: 28px;
+}
+
+nav a {
+    position: relative;
+
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.04em;
+
+    color: var(--muted);
+
+    transition: color 0.2s ease;
+}
+
+nav a::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+
+    width: 0;
+    height: 1px;
+
+    background: var(--accent);
+
+    transition: width 0.2s ease;
+}
+
+nav a:hover {
+    color: var(--accent);
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+
+/* =========================================================
+   GENERAL
+========================================================= */
+
+main {
+    width: min(1200px, 90%);
+    margin: auto;
+}
+
+.section-label {
+    margin-bottom: 12px;
+
+    color: var(--accent);
+
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+}
+
+.rule {
+    width: 80px;
+    height: 2px;
+
+    margin: 24px 0;
+
+    background: var(--accent);
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    min-height: 650px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+
+    gap: 70px;
+
+    padding: 90px 0;
+
+    border-bottom: 1px solid var(--line);
+}
+
+.hero h2 {
+    max-width: 650px;
+
+    font-family: var(--serif);
+    font-size: clamp(3rem, 6vw, 5.4rem);
+    font-weight: 400;
+
+    line-height: 1.03;
+
+    letter-spacing: -0.04em;
+}
+
+.hero h2 em {
+    color: var(--accent);
+    font-weight: 400;
+}
+
+.intro {
+    max-width: 600px;
+
+    font-size: 1.15rem;
+}
+
+.intro.small {
+    margin-top: 15px;
+
+    color: var(--muted);
+    font-size: 0.98rem;
+}
+
+.hero-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+
+    margin-top: 35px;
+}
+
+.button,
+.project-button {
+    display: inline-block;
+
+    padding: 12px 20px;
+
+    background: var(--ink);
+    color: var(--white);
+
+    border: 1px solid var(--ink);
+
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.05em;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+.button:hover,
+.project-button:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+}
+
+.text-link {
+    font-family: var(--mono);
+    font-size: 0.75rem;
+
+    color: var(--accent);
+
+    border-bottom: 1px solid var(--accent);
+    padding-bottom: 3px;
+}
+
+.drawing {
+    min-height: 430px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 25px;
+
+    border: 1px solid var(--line);
+
+    position: relative;
+}
+
+.drawing::before {
+    content: "FIG. 01 / ENGINEERING STUDY";
+
+    position: absolute;
+
+    top: 12px;
+    left: 15px;
+
+    color: var(--muted);
+
+    font-family: var(--mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
+}
+
+.drawing::after {
+    content: "";
+
+    position: absolute;
+    inset: 8px;
+
+    border: 1px dashed var(--line);
+
+    pointer-events: none;
+}
+
+.drawing img {
+    max-height: 390px;
+
+    opacity: 0.82;
+
+    filter: grayscale(100%) contrast(0.95);
+}
+
+
+/* =========================================================
+   SPECIFICATION STRIP
+========================================================= */
+
+.spec-strip {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    border-bottom: 1px solid var(--line);
+}
+
+.spec {
+    min-height: 95px;
+
+    padding: 20px;
+
+    border-right: 1px solid var(--line);
+}
+
+.spec:last-child {
+    border-right: none;
+}
+
+.spec span {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: var(--muted);
+
+    font-family: var(--mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
+}
+
+.spec strong {
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.status {
+    color: var(--accent);
+}
+
+
+/* =========================================================
+   CONTENT SECTIONS
+========================================================= */
+
+.content-section {
+    padding: 110px 0;
+
+    border-bottom: 1px solid var(--line);
+}
+
+.section-heading {
+    display: grid;
+    grid-template-columns: 1fr 0.7fr;
+
+    gap: 60px;
+
+    margin-bottom: 65px;
+}
+
+.section-heading h2 {
+    font-family: var(--serif);
+    font-size: clamp(2.3rem, 4vw, 3.6rem);
+    font-weight: 400;
+    line-height: 1.15;
+}
+
+.section-heading > p {
+    align-self: end;
+
+    color: var(--muted);
+
+    font-size: 1rem;
+}
+
+
+/* =========================================================
+   PROJECT
+========================================================= */
+
+.project {
+    border: 1px solid var(--line);
+
+    background: rgba(250, 249, 245, 0.45);
+}
+
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    padding: 25px 30px;
+
+    border-bottom: 1px solid var(--line);
+}
+
+.project-number {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: var(--accent);
+
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+}
+
+.project-header h3 {
+    font-family: var(--serif);
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+.project-status {
+    padding: 7px 10px;
+
+    border: 1px solid var(--accent);
+
+    color: var(--accent);
+
+    font-family: var(--mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.08em;
+}
+
+.project-body {
+    display: grid;
+    grid-template-columns: 1.4fr 0.8fr;
+
+    gap: 60px;
+
+    padding: 35px 30px;
+}
+
+.project-label {
+    margin-bottom: 12px;
+
+    color: var(--muted);
+
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+}
+
+.project-description > p:not(.project-label) {
+    max-width: 650px;
+
+    margin-bottom: 18px;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    margin: 28px 0;
+}
+
+.project-tags span {
+    padding: 6px 9px;
+
+    border: 1px solid var(--line);
+
+    color: var(--muted);
+
+    font-family: var(--mono);
+    font-size: 0.62rem;
+}
+
+.project-specs {
+    padding-left: 35px;
+
+    border-left: 1px solid var(--line);
+}
+
+.project-specs table {
+    width: 100%;
+
+    border-collapse: collapse;
+}
+
+.project-specs td {
+    padding: 12px 0;
+
+    border-bottom: 1px solid var(--line);
+
+    font-size: 0.9rem;
+}
+
+.project-specs tr:last-child td {
+    border-bottom: none;
+}
+
+.project-footer {
+    display: flex;
+    justify-content: space-between;
+
+    padding: 13px 30px;
+
+    background: var(--paper-dark);
+
+    border-top: 1px solid var(--line);
+
+    color: var(--muted);
+
+    font-family: var(--mono);
+    font-size: 0.62rem;
+}
+
+
+/* =========================================================
+   ENGINEERING FOCUS
+========================================================= */
+
+.focus-table {
+    border-top: 1px solid var(--line);
+}
+
+.focus-row {
+    display: grid;
+    grid-template-columns: 70px 220px 1fr;
+
+    align-items: center;
+
+    min-height: 100px;
+
+    border-bottom: 1px solid var(--line);
+}
+
+.focus-row > span {
+    color: var(--accent);
+
+    font-family: var(--mono);
+    font-size: 0.7rem;
+}
+
+.focus-row strong {
+    font-family: var(--serif);
+    font-size: 1.25rem;
+    font-weight: 400;
+}
+
+.focus-row p {
+    max-width: 600px;
+
+    color: var(--muted);
+}
+
+
+/* =========================================================
+   ENGINEERING LOG
+========================================================= */
+
+.log {
+    border-top: 1px solid var(--line);
+}
+
+.log-entry {
+    display: grid;
+    grid-template-columns: 90px 1fr 40px;
+
+    gap: 30px;
+
+    padding: 35px 0;
+
+    border-bottom: 1px solid var(--line);
+
+    transition: padding 0.2s ease;
+}
+
+.log-entry:hover {
+    padding-left: 12px;
+}
+
+.log-date {
+    color: var(--accent);
+
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    line-height: 1.4;
+}
+
+.log-entry span {
+    color: var(--muted);
+
+    font-family: var(--mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
+}
+
+.log-entry h3 {
+    margin: 7px 0;
+
+    font-family: var(--serif);
+    font-size: 1.4rem;
+    font-weight: 400;
+}
+
+.log-entry p {
+    max-width: 700px;
+
+    color: var(--muted);
+}
+
+.log-arrow {
+    align-self: center;
+
+    color: var(--accent);
+
+    font-size: 1.4rem;
+}
+
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.about-section {
+    display: grid;
+    grid-template-columns: 0.7fr 1.3fr;
+
+    gap: 100px;
+
+    padding: 120px 0;
+
+    border-bottom: 1px solid var(--line);
+}
+
+.about-title h2 {
+    font-family: var(--serif);
+    font-size: clamp(3rem, 5vw, 5rem);
+    font-weight: 400;
+    line-height: 1.05;
+}
+
+.about-content {
+    max-width: 700px;
+}
+
+.about-content p {
+    margin-bottom: 25px;
+}
+
+.about-content .lead {
+    font-family: var(--serif);
+    font-size: 1.35rem;
+    line-height: 1.7;
+}
+
+.learning {
+    margin-top: 45px;
+
+    padding-top: 25px;
+
+    border-top: 1px solid var(--line);
+}
+
+.learning-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+}
+
+.learning-list span {
+    padding: 8px 12px;
+
+    border: 1px solid var(--line);
+
+    font-family: var(--mono);
+    font-size: 0.68rem;
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 100px;
+
+    padding: 110px 0;
+}
+
+.contact-section h2 {
+    margin-bottom: 20px;
+
+    font-family: var(--serif);
+    font-size: 3.5rem;
+    font-weight: 400;
+}
+
+.contact-section p {
+    max-width: 550px;
+
+    color: var(--muted);
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-details a {
+    display: flex;
+    flex-direction: column;
+
+    padding: 18px 0;
+
+    border-bottom: 1px solid var(--line);
+}
+
+.contact-details a:first-child {
+    border-top: 1px solid var(--line);
+}
+
+.contact-details span {
+    color: var(--muted);
+
+    font-family: var(--mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
+}
+
+.contact-details strong {
+    margin-top: 4px;
+
+    font-family: var(--serif);
+    font-size: 1.05rem;
+    font-weight: 400;
+}
+
+.contact-details a:hover strong {
+    color: var(--accent);
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    display: flex;
+    justify-content: space-between;
+
+    padding: 30px 5vw;
+
+    background: var(--ink);
+
+    color: var(--paper);
+
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.04em;
+}
+
+footer div {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+footer span {
+    color: #aaa69c;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 850px) {
+
+    .site-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 25px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        gap: 18px;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        padding: 70px 0;
+    }
+
+    .drawing {
+        min-height: 350px;
+    }
+
+    .spec-strip {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .spec:nth-child(2) {
+        border-right: none;
+    }
+
+    .spec:nth-child(-n+2) {
+        border-bottom: 1px solid var(--line);
+    }
+
+    .section-heading {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .project-body {
+        grid-template-columns: 1fr;
+    }
+
+    .project-specs {
+        padding-left: 0;
+        padding-top: 30px;
+
+        border-left: none;
+        border-top: 1px solid var(--line);
+    }
+
+    .focus-row {
+        grid-template-columns: 50px 1fr;
+        gap: 10px;
+
+        padding: 25px 0;
+    }
+
+    .focus-row p {
+        grid-column: 2;
+    }
+
+    .about-section,
+    .contact-section {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 25px;
+    }
+}
+
+
+@media (max-width: 550px) {
+
+    .top-bar {
+        font-size: 0.55rem;
+    }
+
+    .hero h2 {
+        font-size: 2.8rem;
+    }
+
+    .spec-strip {
+        grid-template-columns: 1fr;
+    }
+
+    .spec {
+        border-right: none;
+        border-bottom: 1px solid var(--line);
+    }
+
+    .spec:last-child {
+        border-bottom: none;
+    }
+
+    .project-header {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .project-footer {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .log-entry {
+        grid-template-columns: 60px 1fr;
+    }
+
+    .log-arrow {
+        display: none;
+    }
+
+    .contact-section h2 {
+        font-size: 2.8rem;
+    }
+}
